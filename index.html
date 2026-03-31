@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romina Parra | Clases de Programación y Matemáticas</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --dark-grey: #171717;
+            --primary: #6366f1; 
+            --accent: #10b981;  
+            --gold: #b45309;    
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        /* Perfil */
+        .profile-card {
+            background: var(--dark-grey);
+            padding: 40px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border: 1px solid #262626;
+            margin-bottom: 30px;
+        }
+
+        .image-container img {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            padding: 4px;
+            background: var(--dark-grey);
+        }
+
+        .profile-info h1 { margin: 0; font-size: 2rem; }
+
+        .name-divider {
+            height: 2px; width: 60px;
+            background: var(--gold);
+            margin: 10px 0 15px;
+        }
+
+        .career { color: var(--primary); font-weight: 700; margin-bottom: 15px; }
+        .bio { color: var(--text-dim); font-size: 0.95rem; }
+        .gold-text { color: var(--gold) !important; }
+
+        /* Sección de Confianza */
+        .trust-section {
+            background: rgba(23, 23, 23, 0.5);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-left: 5px solid var(--accent);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-content h3 { color: var(--accent); margin-top: 0; }
+        .trust-content p { margin: 0; font-size: 0.95rem; }
+
+        /* Experiencia */
+        .experience-section { margin-bottom: 40px; }
+        .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .exp-item { 
+            display: flex; gap: 15px; 
+            background: #171717; padding: 15px; 
+            border-radius: 12px; border: 1px solid #262626; 
+        }
+
+        /* Tarjetas de Materias */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: var(--dark-grey);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #262626;
+            transition: all 0.3s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .subject-card h3 { font-size: 1.1rem; margin: 15px 0; }
+        .subject-card p { font-size: 0.85rem; color: var(--text-dim); }
+        .icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+        /* Bordes superiores temáticos */
+        .math-uni { border-top: 3px solid #6366f1; }
+        .math-school { border-top: 3px solid #ec4899; }
+        .python { border-top: 3px solid #3776ab; }
+        .cpp { border-top: 3px solid var(--gold); }
+
+        /* Precios */
+        .info-extra { text-align: center; margin-bottom: 40px; }
+        .info-box { 
+            background: #171717; padding: 20px; 
+            border-radius: 15px; border: 1px solid #262626; 
+            display: inline-block; 
+        }
+
+        /* Botón CTA con Glow */
+        .cta-container { text-align: center; margin: 60px 0 80px; }
+
+        .cta {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%);
+            color: var(--white);
+            padding: 22px 50px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta span { font-weight: 800; font-size: 1.2rem; text-transform: uppercase; }
+        .cta small { font-size: 0.8rem; opacity: 0.8; margin-top: 5px; }
+
+        .btn-glow { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+
+        .btn-glow:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5), 0 0 15px var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .profile-card { flex-direction: column; text-align: center; }
+            .exp-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="profile-card">
+        <div class="image-container">
+            <img src="https://i.ibb.co/60mg042Z/1774984874899.jpg" alt="Romina Parra">
+        </div>
+        <div class="profile-info">
+            <h1>Romina Parra</h1>
+            <div class="name-divider"></div>
+            <p class="career">Licenciatura en Ingeniería en Ciencias de la Computación</p>
+            <p class="bio">
+                Soy una estudiante comprometida con la <strong>evolución ética</strong> de la tecnología, apasionada por el mundo <strong>STEM</strong> y la enseñanza. 
+                <br><br>
+                Mi objetivo es ayudarte a desarrollar un pensamiento matemático y lógico firme, que te motive a adquirir un <strong>gran poder para construir el futuro</strong> a través de la ciencia y la programación.
+            </p>
+        </div>
+    </header>
+
+    <section class="trust-section">
+        <div class="trust-content">
+            <h3>🤝 Mi compromiso con tu aprendizaje</h3>
+            <p>Antes de agendar cualquier clase, realizamos una <strong>reunión inicial gratuita</strong> para organizar tu plan personalizado. Revisamos los contenidos y objetivos; solo después de ver el plan de trabajo, tú decides si tomar la clase o no. <strong>Sin compromisos ni cobros previos.</strong></p>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="exp-grid">
+            <div class="exp-item">
+                <span class="icon-small gold-text">🎓</span>
+                <div>
+                    <strong>Certificación IB:</strong>
+                    <p>Matemáticas: Análisis y Enfoques (Bachillerato Internacional).</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <span class="icon-small gold-text">💻</span>
+                <div>
+                    <strong>Experiencia Tutora:</strong>
+                    <p>C++ Competitivo y Matemáticas (Básica/Media) durante el 2025.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="subjects-grid">
+        <div class="subject-card math-uni">
+            <div class="icon gold-text">♾️</div>
+            <h3>Matemática Universitaria</h3>
+            <p>Precálculo, Cálculo, Álgebra y Geometría. Prepárate para tus <strong>controles y certámenes</strong> con un plan diseñado para tu carrera.</p>
+        </div>
+
+        <div class="subject-card math-school">
+            <div class="icon gold-text">📐</div>
+            <h3>Matemática Media y Básica</h3>
+            <p>Refuerzo basado en el rigor del <strong>IB</strong>. Mejora tus notas y domina el álgebra y la geometría con práctica constante.</p>
+        </div>
+
+        <div class="subject-card python">
+            <div class="icon gold-text">🐍</div>
+            <h3>Introducción a Python</h3>
+            <p>Desde tus primeros pasos hasta la <strong>lógica intermedia</strong>. Automatización de tareas y resolución de problemas reales.</p>
+        </div>
+
+        <div class="subject-card cpp">
+            <div class="icon gold-text">⚙️</div>
+            <h3>Programación Competitiva C++</h3>
+            <p>Domina <strong>control de flujo, estructuras de datos y <span class="gold-text">complejidad computacional</span></strong>. Aprenderás <span class="gold-text">búsqueda lineal/binaria</span> y ordenamiento para optimizar al máximo.</p>
+        </div>
+    </div>
+
+    <section class="info-extra">
+        <div class="info-box price">
+            <h3>💰 Valor Inicial</h3>
+            <p><strong>$10.000 / hora</strong>. Presupuestos especiales según volumen y complejidad.</p>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <a href="https://wa.me/56999788941" class="cta btn-glow" target="_blank">
+            <span>¡Agenda tu reunión gratuita!</span>
+            <small>Consulta disponibilidad inmediata por WhatsApp</small>
+        </a>
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.subject-card, .exp-item, .trust-section, .info-box').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "all 0.6s ease-out";
+        observer.observe(el);
+    });
+
+    const mainBtn = document.querySelector('.cta');
+    setInterval(() => {
+        mainBtn.style.transform = "scale(1.03)";
+        setTimeout(() => mainBtn.style.transform = "scale(1)", 200);
+    }, 5000);
+</script>
+
+</body>
+</html>
