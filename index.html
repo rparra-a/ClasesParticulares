@@ -59,9 +59,22 @@
             margin: 10px 0 15px;
         }
 
-        .career { color: var(--primary); font-weight: 700; margin-bottom: 15px; }
-        .bio { color: var(--text-dim); font-size: 0.95rem; }
-        .gold-text { color: var(--gold) !important; }
+        .career { 
+            color: var(--primary); 
+            font-weight: 700; 
+            margin-bottom: 4px; /* Menos espacio aquí */
+            font-size: 1.1rem;
+        }
+
+        .university {
+            color: var(--gold); /* Cambiamos a dorado para que resalte con clase */
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px; /* Más espacio entre letras para un look premium */
+            margin-bottom: 20px; /* Más espacio antes de la bio */
+            margin-top: 0;
+        }
 
         /* Sección de Confianza */
         .trust-section {
@@ -169,6 +182,7 @@
             <h1>Romina Parra</h1>
             <div class="name-divider"></div>
             <p class="career">Licenciatura en Ingeniería en Ciencias de la Computación</p>
+            <p class="university">Universidad Católica</p> <p class="bio"></p>
             <p class="bio">
                 Soy una estudiante comprometida con la <strong>evolución ética</strong> de la tecnología, apasionada por el mundo <strong>STEM</strong> y la enseñanza. 
                 <br><br>
